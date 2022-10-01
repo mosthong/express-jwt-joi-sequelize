@@ -2,37 +2,37 @@
 
 #### 介绍
 一套简单的整和方案，极简快速开发，但可以随意拓展。
-express+jwt+joi+sequelize
+express
+jwt
+joi
+sequelize
 
 #### 软件架构
 软件架构说明
-
+框架：express
+鉴权：jwt
+参数校验：joi
+数据库ORM：sequelize
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+```js
+npm install
+```
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  路由： 
+ 路由管理 - router
+ 挂载 - app.use('/api', 路由)
+2.  业务逻辑
+ app>control（抽离业务逻辑请分离server、model）
+3.  参数校验
+app>scheme
+ 使用：见express-joi文档
+4.  数据库
+ ORM： sequelize
 
 #### 参与贡献
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+1.  hong 提交代码
