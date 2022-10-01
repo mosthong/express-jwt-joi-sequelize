@@ -33,6 +33,14 @@ app>scheme
 4.  数据库
  ORM： sequelize
 
+ ```js
+ 启动
+ npm run dev
+ 发布
+ 开发与生产环境一致
+ 进程守护请自行使用
+```
+
 #### 参与贡献
 
 1.  hong 提交代码
