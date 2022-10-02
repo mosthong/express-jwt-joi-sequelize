@@ -1,6 +1,8 @@
+const path = require('path')
 const express = require('express')
 const { expressjwt: jwt } = require('express-jwt')
 const Joi = require('joi')
+const nunjucks = require('nunjucks')
 const { JWT_SECRET, BASE_URL, PORT } = require('./config/app')
 
 const app = express()
@@ -46,19 +48,27 @@ app.use(cors())
 //   saveUninitialized: true
 // }))
 // 3.2. express-jwt 解密（前后端分离推荐）
-app.use(jwt(
-  { 
-    secret: JWT_SECRET,
-    algorithms: ["HS256"],
-  })
-  .unless({
-    path: ['/api/login', '/api/reguser']
-  })
-)
+// app.use(jwt(
+//   { 
+//     secret: JWT_SECRET,
+//     algorithms: ["HS256"],
+//   })
+//   .unless({
+//     path: ['/api/login', '/api/reguser']
+//   })
+// )
+
+// 模版引擎 nunjucks
+nunjucks.configure('views', {
+  autoescape: true,
+  express: app
+});
 
 // 4. 路由: '/api' 统一访问前缀 app.use('/api', useRouter)
 const useRouter = require('./router/user')
 app.use('/api', useRouter)
+const demoRouter = require('./router/demo')
+app.use(demoRouter)
 
 
 // fail 错误级别中间件
